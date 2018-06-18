@@ -1,5 +1,5 @@
 FROM debian:stretch-slim
-# tokky2
+# tokky3
 LABEL maintainer="NGINX Docker Maintainers <docker-maint@nginx.com>"
 
 ENV NGINX_VERSION 1.15.0-1~stretch
