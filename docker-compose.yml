@@ -7,7 +7,7 @@ services:
     container_name: webssh
     environment:
        - SIAB_USER=admin
-       - SIAB_PASSWORD=xnet4312
+       - SIAB_PASSWORD=testmdp
        - SIAB_SUDO=true
        - SIAB_SSL=false
     restart: 'always'
