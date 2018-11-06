@@ -21,8 +21,8 @@ services:
     links:
        - webssh:wssh
     volumes:
-       - /data/nginx/root:/etc/nginx/conf.d
-       - /data/nginx/www:/usr/share/nginx/html/www:ro
+       - /data/docker-config/nginx/root:/etc/nginx/conf.d
+       - /data/docker-config/nginx/www:/usr/share/nginx/html/www:ro
     restart: 'always'
     ports:
        - 80:80
