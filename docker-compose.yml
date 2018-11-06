@@ -1,0 +1,33 @@
+version: '3.1'
+
+services:
+
+  webssh:
+    image: sspreitzer/shellinabox:latest
+    container_name: webssh
+    environment:
+       - SIAB_USER=admin
+       - SIAB_PASSWORD=xnet4312
+       - SIAB_SUDO=true
+       - SIAB_SSL=false
+    restart: 'always'
+    networks:
+      pt_internal:
+
+  nginx_root:
+    #image: elisiano/nginx-modsecurity:latest
+    image: nginx:latest
+    container_name: nginx_root
+    links:
+       - webssh:wssh
+    volumes:
+       - /data/nginx/root:/etc/nginx/conf.d
+       - /data/nginx/www:/usr/share/nginx/html/www:ro
+    restart: 'always'
+    ports:
+       - 80:80
+    networks:
+      pt_internal:
+
+networks:
+  pt_internal:
